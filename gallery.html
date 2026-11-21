@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전시관 | 미림 박물관</title>
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <a href="ranking.html" class="logo">
+        <img src="logo.png" alt="미림 박물관 로고">
+        <span>미림 박물관</span>
+    </a>
+
+    <nav class="navigation">
+        <a href="ranking.html">홈</a>
+        <a href="gallery.html" class="active">박물관</a>
+        <a href="ranking.html">랭킹</a>
+    </nav>
+
+    <div class="header-right">
+        <a href="new.html" class="upload-button">＋ 유물 올리기</a>
+        <div class="profile">
+            <span class="profile-mark">최</span>
+            1618 최강은
+        </div>
+    </div>
+</header>
+
+<main class="gallery-container">
+    <section class="page-heading">
+        <h1>전시관</h1>
+        <p>친구들이 전시한 유물과 화석이에요. 마음에 드는 전시품에 좋아요를 눌러주세요.</p>
+    </section>
+
+    <section class="gallery-controls">
+        <div class="type-tabs">
+            <button class="type-button active" data-type="all">전체</button>
+            <button class="type-button" data-type="유물">유물</button>
+            <button class="type-button" data-type="화석">화석</button>
+        </div>
+
+        <div class="sort-tabs">
+            <button class="sort-button active" data-sort="latest">최신순</button>
+            <button class="sort-button" data-sort="popular">좋아요순</button>
+            <button class="sort-button" data-sort="oldest">오래된순</button>
+        </div>
+    </section>
+
+    <section class="gallery-grid" id="galleryGrid"></section>
+</main>
+
+</body>
+</html>

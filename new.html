@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새 전시품 등록 | 미림 박물관</title>
+    <link rel="stylesheet" href="new.css">
+    <script src="new.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <a href="ranking.html" class="logo">
+        <img src="logo.png" alt="미림 박물관 로고">
+        <span>미림 박물관</span>
+    </a>
+
+    <nav class="navigation">
+        <a href="ranking.html">홈</a>
+        <a href="gallery.html">박물관</a>
+        <a href="ranking.html">랭킹</a>
+    </nav>
+
+    <div class="header-right">
+        <a href="new.html" class="upload-button">＋ 유물 올리기</a>
+        <div class="profile">
+            <span class="profile-mark">최</span>
+            1618 최강은
+        </div>
+    </div>
+</header>
+
+<main class="upload-container">
+    <section class="page-heading">
+        <h1>새 전시품 등록</h1>
+        <p>사진을 올리고 필터를 고른 뒤, 제목과 설명을 적어주세요.</p>
+    </section>
+
+    <form id="uploadForm" class="upload-layout">
+        <div class="left-column">
+            <section class="upload-box">
+                <h2><span class="step-number">1</span> 사진</h2>
+
+                <div class="image-area" id="imageArea">
+                    <p>사진을 선택해주세요.</p>
+                    <img id="uploadedImage" alt="선택한 전시품 사진">
+                </div>
+
+                <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
+                <input type="file" id="albumInput" accept="image/*" hidden>
+
+                <div class="image-buttons">
+                    <button type="button" id="cameraButton">◎ 사진 찍기</button>
+                    <button type="button" id="albumButton">▧ 앨범에서 선택하기</button>
+                </div>
+            </section>
+
+            <section class="filter-box">
+                <h2><span class="step-number">2</span> 필터 고르기</h2>
+
+                <div class="filter-options">
+                    <button type="button" class="filter-option selected" data-filter="artifact">
+                        <span class="filter-color artifact-color"></span>
+                        <span>
+                            <strong>유물</strong>
+                            <small>세월이 담긴 세피아톤</small>
+                        </span>
+                    </button>
+
+                    <button type="button" class="filter-option" data-filter="fossil">
+                        <span class="filter-color fossil-color"></span>
+                        <span>
+                            <strong>화석</strong>
+                            <small>돌에 새긴 듯한 회색 톤</small>
+                        </span>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <div class="right-column">
+            <section class="description-box">
+                <h2><span class="step-number">3</span> 제목과 설명</h2>
+
+                <label for="titleInput">제목</label>
+                <input
+                    type="text"
+                    id="titleInput"
+                    maxlength="30"
+                    placeholder="전시품 제목을 입력해주세요."
+                    required
+                >
+
+                <label for="descriptionInput">설명</label>
+                <textarea
+                    id="descriptionInput"
+                    maxlength="200"
+                    placeholder="전시품에 담긴 이야기를 적어주세요."
+                    required
+                ></textarea>
+
+                <div class="text-count">
+                    <span id="currentCount">0</span>/200
+                </div>
+            </section>
+
+            <section class="preview-section">
+                <h2>전시 설명판 미리보기</h2>
+
+                <div class="preview-card">
+                    <span id="previewType">유물</span>
+                    <h3 id="previewTitle">제목을 입력해주세요.</h3>
+                    <p id="previewDescription">설명을 입력해주세요.</p>
+                    <div class="preview-author">1618 최강은</div>
+                </div>
+            </section>
+
+            <button type="submit" class="submit-button">박물관에 전시하기 →</button>
+        </div>
+    </form>
+</main>
+
+</body>
+</html>

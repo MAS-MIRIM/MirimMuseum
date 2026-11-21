@@ -1,0 +1,431 @@
+@font-face {
+    font-family: "HSYeolumMulbit";
+    src: url("./HS여름물빛체.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    color: #080808;
+    font-family: Arial, "Noto Sans KR", sans-serif;
+    background:
+        radial-gradient(ellipse at 85% 5%, #ffe4d1 0%, transparent 43%),
+        linear-gradient(110deg, #fffaf6, #ffffff 48%, #fffaf6);
+}
+
+/* 상단 공통 헤더 */
+.header {
+    width: 100%;
+    height: 78px;
+    padding: 0 3.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #000;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 900;
+    white-space: nowrap;
+    font-family: "HSYeolumMulbit", sans-serif; /* 로고에만 폰트 적용 */
+}
+
+.logo img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    display: block;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 76px;
+    margin-left: 90px;
+}
+
+.navigation a {
+    color: #080808;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.upload-button {
+    padding: 12px 21px;
+    border-radius: 30px;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px 7px 8px;
+    border-radius: 25px;
+    background: white;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.profile-mark {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #f5e9e1;
+    font-weight: bold;
+}
+
+/* 등록 화면 */
+.upload-container {
+    width: 82%;
+    max-width: 1300px;
+    margin: 35px auto 80px;
+}
+
+.page-heading {
+    margin-bottom: 42px;
+}
+
+.page-heading h1 {
+    font-size: 38px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    font-family: "HSYeolumMulbit", sans-serif; /* 페이지 제목에만 폰트 적용 */
+}
+
+.page-heading p {
+    font-size: 14px;
+    color: #555;
+}
+
+.upload-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 32px;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.upload-box,
+.filter-box,
+.description-box {
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.35);
+    padding: 30px;
+}
+
+.upload-box h2,
+.filter-box h2,
+.description-box h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    font-size: 13px;
+}
+
+.image-area {
+    height: 300px;
+    background: #ccc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-area img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-area img.show {
+    display: block;
+}
+
+.image-area p {
+    position: absolute;
+    color: #777;
+    font-size: 14px;
+}
+
+.image-area.has-image p {
+    display: none;
+}
+
+.image-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.image-buttons button {
+    flex: 1;
+    height: 42px;
+    border: 1px solid #bbb;
+    border-radius: 25px;
+    background: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.image-buttons button:hover {
+    background: #f5f5f5;
+}
+
+.filter-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    background: #f5f5f5;
+    text-align: left;
+    cursor: pointer;
+}
+
+.filter-option.selected {
+    border: 1.5px solid #000;
+    background: #fff;
+}
+
+.filter-color {
+    width: 55px;
+    height: 55px;
+    border-radius: 13px;
+    flex-shrink: 0;
+}
+
+.artifact-color {
+    background: #e9d1a5;
+}
+
+.fossil-color {
+    background: #ccc;
+}
+
+.filter-option strong,
+.filter-option small {
+    display: block;
+}
+
+.filter-option strong {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.filter-option small {
+    font-size: 11px;
+    color: #555;
+}
+
+.description-box label {
+    display: block;
+    font-size: 13px;
+    margin: 16px 0 8px;
+}
+
+.description-box input,
+.description-box textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background: white;
+    padding: 13px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.description-box input:focus,
+.description-box textarea:focus {
+    border-color: #777;
+}
+
+.description-box textarea {
+    height: 170px;
+    resize: vertical;
+}
+
+.text-count {
+    text-align: right;
+    font-size: 11px;
+    color: #555;
+    margin-top: 6px;
+}
+
+.preview-section h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.preview-card {
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.55);
+}
+
+.preview-card > span {
+    display: block;
+    color: #b69a70;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.preview-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    word-break: break-word;
+}
+
+.preview-card p {
+    font-size: 12px;
+    line-height: 1.6;
+    min-height: 35px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.preview-author {
+    border-top: 1px solid #ddd;
+    margin-top: 15px;
+    padding-top: 12px;
+    font-size: 11px;
+    color: #555;
+}
+
+.submit-button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    background: #000;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #333;
+}
+
+@media (max-width: 1100px) {
+    .navigation {
+        gap: 28px;
+        margin-left: 20px;
+    }
+
+    .upload-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 800px) {
+    .upload-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .image-area {
+        height: 250px;
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 16px 5%;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+        gap: 45px;
+    }
+
+    .header-right {
+        gap: 7px;
+    }
+
+    .upload-button {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    .profile {
+        font-size: 11px;
+    }
+
+    .upload-container {
+        width: 90%;
+    }
+
+    .upload-box,
+    .filter-box,
+    .description-box {
+        padding: 20px;
+    }
+
+    .filter-options {
+        grid-template-columns: 1fr;
+    }
+}
