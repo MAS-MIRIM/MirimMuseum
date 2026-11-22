@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미림 박물관 - 로그인</title>
+  <link rel="stylesheet" href="../css/mirim_museum_LogIn.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="../js/supabase.js" defer></script>
+  <script src="../js/login.js" defer></script>
+</head>
+<body>
+  <a href="mirim_museum.html" class="top-left-logo">
+    <img src="../img/박물관1.png" alt="박물관 아이콘">
+    <span>미림 박물관</span>
+  </a>
+
+  <main class="main-container">
+    <img src="../img/박물관1.png" alt="박물관 아이콘" class="main-icon">
+    <h1 class="main-title">미림 박물관</h1>
+    <p class="sub-text">
+      미림에서의 사소한 추억을<br>
+      미림박물관에 저장해요
+    </p>
+
+    <!-- submit 버튼이라 엔터를 눌러도 로그인돼요 -->
+    <form class="login-form" id="loginForm">
+      <div class="input-group">
+        <label for="login-id">학번</label>
+        <input type="text" id="login-id" placeholder="예) 1405"
+               inputmode="numeric" autocomplete="username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="login-pw">비밀번호</label>
+        <input type="password" id="login-pw" placeholder="6자 이상"
+               autocomplete="current-password" required>
+      </div>
+
+      <button type="submit" class="btn-submit" id="loginButton">입장하기 →</button>
+
+      <p class="form-switch">
+        처음이에요? <a href="mirim_museum_SignIn.html">회원가입</a>
+      </p>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명예의 전당 | 미림 박물관</title>
+    <link rel="stylesheet" href="../css/ranking.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="../js/supabase.js" defer></script>
+    <script src="../js/ranking.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <a href="mirim_museum_Home.html" class="logo">
+        <img src="../img/logo.png" alt="미림 박물관 로고">
+        <span>미림 박물관</span>
+    </a>
+
+    <nav class="navigation">
+        <a href="mirim_museum_Home.html">홈</a>
+        <a href="gallery.html">박물관</a>
+        <a href="ranking.html" class="active">랭킹</a>
+    </nav>
+
+    <div class="header-right">
+        <a href="new.html" class="upload-button">＋ 유물 올리기</a>
+        <button type="button" class="profile" id="profileButton">
+            <span class="profile-mark" id="profileMark"></span>
+            <span id="profileName"></span>
+        </button>
+    </div>
+</header>
+
+<main class="ranking-container">
+    <section class="page-heading">
+        <h1>명예의 전당</h1>
+        <p>좋아요와 조회수로 미림 박물관의 인기 전시품을 확인해 보세요.</p>
+    </section>
+
+    <div class="ranking-tabs">
+        <button class="tab-button active" data-ranking="likes">좋아요 순위</button>
+        <button class="tab-button" data-ranking="views">조회수 순위</button>
+    </div>
+
+    <section class="top-ranking" id="topRanking"></section>
+
+    <section class="ranking-list" id="rankingList">
+        <p class="empty-message">순위를 불러오는 중이에요...</p>
+    </section>
+</main>
+
+</body>
+</html>

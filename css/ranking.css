@@ -1,0 +1,448 @@
+@font-face {
+    font-family: "HSYeolumMulbit";
+    src: url("../HS여름물빛체.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* 또는 원하는 색상 코드 (예: #000000) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    color: #080808;
+    font-family: Arial, "Noto Sans KR", sans-serif;
+    background:
+        radial-gradient(ellipse at 85% 5%, #ffe4d1 0%, transparent 43%),
+        linear-gradient(110deg, #fffaf6, #ffffff 48%, #fffaf6);
+}
+
+/* 상단 공통 헤더 */
+.header {
+    width: 100%;
+    height: 78px;
+    padding: 0 3.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #000;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 900;
+    white-space: nowrap;
+    font-family: "HSYeolumMulbit", sans-serif; /* 로고에만 폰트 적용 */
+}
+
+.logo img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    display: block;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 76px;
+    margin-left: 90px;
+}
+
+.navigation a {
+    color: #080808;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navigation .active {
+    font-weight: 800;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.upload-button {
+    padding: 12px 21px;
+    border-radius: 30px;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px 7px 8px;
+    border-radius: 25px;
+    background: white;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.profile-mark {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #f5e9e1;
+    font-weight: bold;
+}
+
+/* 랭킹 화면 */
+.ranking-container {
+    width: 86%;
+    max-width: 1450px;
+    margin: 35px auto 80px;
+}
+
+.page-heading h1 {
+    font-size: 38px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    font-family: "HSYeolumMulbit", sans-serif; /* 페이지 제목에만 폰트 적용 */
+}
+
+.page-heading p {
+    font-size: 14px;
+    color: #555;
+}
+
+.ranking-tabs {
+    display: flex;
+    margin: 35px 0 28px;
+    background: #e8e8e8;
+    width: fit-content;
+    border-radius: 30px;
+    padding: 3px;
+}
+
+.tab-button {
+    border: none;
+    background: transparent;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.tab-button.active {
+    background: #000;
+    color: white;
+}
+
+.top-ranking {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.top-card {
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    padding: 22px;
+    background: rgba(255,255,255,0.45);
+}
+
+.top-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.rank-number {
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: white;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+.type-label {
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 11px;
+}
+
+.top-image {
+    width: 100%;
+    height: 190px;
+    background: #a3a3a3;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.top-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 13px;
+}
+
+.top-info h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.top-info p {
+    font-size: 11px;
+    color: #666;
+}
+
+.like-count {
+    color: #ff2871;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.like-count small {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.ranking-list {
+    margin-top: 20px;
+}
+
+.rank-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.rank-row .rank-number {
+    background: transparent;
+    color: #000;
+    font-size: 18px;
+    width: 20px;
+}
+
+.rank-thumbnail {
+    width: 75px;
+    height: 75px;
+    border-radius: 13px;
+    object-fit: cover;
+    background: #ccc;
+}
+
+.rank-description {
+    flex: 1;
+}
+
+.rank-description h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.rank-description p {
+    font-size: 11px;
+    color: #666;
+}
+
+.rank-likes {
+    color: #ff2871;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.rank-likes small {
+    display: block;
+    color: #555;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+/* ===================== 반응형 ===================== */
+
+/* 노트북 (1280px 이하) */
+@media (max-width: 1280px) {
+    .navigation {
+        gap: 48px;
+        margin-left: 40px;
+    }
+
+    .ranking-container {
+        width: 90%;
+    }
+}
+
+/* 태블릿 가로 (1024px 이하) */
+@media (max-width: 1024px) {
+    .header {
+        padding: 0 24px;
+    }
+
+    .navigation {
+        gap: 32px;
+        margin-left: 0;
+    }
+
+    .upload-button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .ranking-container {
+        width: 92%;
+        margin-top: 24px;
+    }
+
+    .page-heading h1 {
+        font-size: 34px;
+    }
+
+    .top-ranking {
+        gap: 18px;
+    }
+
+    .top-card {
+        padding: 18px;
+    }
+
+    .top-image {
+        height: 170px;
+    }
+}
+
+/* 태블릿 세로 (820px 이하): 1위는 크게 한 줄, 2·3위는 아래에 나란히 */
+@media (max-width: 820px) {
+    .navigation {
+        gap: 24px;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .page-heading h1 {
+        font-size: 30px;
+    }
+
+    .top-ranking {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .top-card:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .top-card:first-child .top-image {
+        height: 280px;
+    }
+}
+
+@media (max-width: 700px) {
+    .ranking-container {
+        width: 90%;
+    }
+
+    .top-ranking {
+        grid-template-columns: 1fr;
+    }
+
+    .top-image,
+    .top-card:first-child .top-image {
+        height: 180px;
+    }
+
+    .rank-thumbnail {
+        width: 58px;
+        height: 58px;
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 16px 5%;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+        gap: 45px;
+    }
+
+    .header-right {
+        gap: 7px;
+    }
+
+    .upload-button {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    .profile {
+        font-size: 11px;
+    }
+}
+
+/* 프로필 버튼 (누르면 로그아웃) */
+button.profile {
+    border: none;
+    font: inherit;
+    font-size: 14px;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* 유물/화석 필터 (gallery.css, new.js와 같은 값) */
+.top-image.artifact,
+.rank-thumbnail.artifact {
+    filter: sepia(0.65) saturate(0.85) brightness(1.05);
+}
+
+.top-image.fossil,
+.rank-thumbnail.fossil {
+    filter: grayscale(1) contrast(0.95);
+}
+
+.empty-message {
+    text-align: center;
+    padding: 80px 0;
+    color: #777;
+    font-size: 14px;
+}
+
+/* 터치 기기(태블릿): 탭 버튼을 누르기 쉽게 */
+@media (pointer: coarse) {
+    .tab-button {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+}

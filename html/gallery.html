@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전시관 | 미림 박물관</title>
+    <link rel="stylesheet" href="../css/gallery.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <!--인터넷 에서 supabase 도구 상자를 가져온다-->
+    <script src="../js/supabase.js" defer></script>
+    <!--모든페이지 공통 코드(db , 함수들(toEmail() , filterClass() 등))-->
+    <script src="../js/gallery.js" defer></script>
+    <!--gallery 전용 js 코드-->
+    <!--저기에 공통적으로 붙어있는 defer란? : HTML을 전부 읽고 나서
+    JS를 실행해라(안그러면 NULL 반환 할수도있음)-->
+</head>
+<body>
+
+<header class="header">
+    <a href="mirim_museum_Home.html" class="logo">
+        <img src="../img/logo.png" alt="미림 박물관 로고">
+        <span>미림 박물관</span>
+    </a>
+
+    <nav class="navigation">
+        <a href="mirim_museum_Home.html">홈</a>
+        <a href="gallery.html" class="active">박물관</a>
+        <a href="ranking.html">랭킹</a>
+    </nav>
+
+    <div class="header-right">
+        <a href="new.html" class="upload-button">＋ 유물 올리기</a>
+        <button type="button" class="profile" id="profileButton">
+            <span class="profile-mark" id="profileMark"></span>
+            <span id="profileName"></span>
+        </button>
+    </div>
+</header>
+
+<main class="gallery-container">
+    <section class="page-heading">
+        <h1>전시관</h1>
+        <p>친구들이 전시한 유물과 화석이에요. 사진을 누르면 크게 볼 수 있어요.</p>
+    </section>
+
+    <section class="gallery-controls">
+        <div class="type-tabs">
+            <button class="type-button active" data-type="all">전체</button>
+            <button class="type-button" data-type="유물">유물</button>
+            <button class="type-button" data-type="화석">화석</button>
+        </div>
+
+        <div class="sort-tabs">
+            <button class="sort-button active" data-sort="latest">최신순</button>
+            <button class="sort-button" data-sort="popular">좋아요순</button>
+            <button class="sort-button" data-sort="oldest">오래된순</button>
+        </div>
+    </section>
+
+    <section class="gallery-grid" id="galleryGrid">
+        <p class="empty-message">전시품을 불러오는 중이에요...</p>
+    </section>
+</main>
+
+<!-- 전시품 크게 보기 (사진을 누르면 열림, 열 때마다 조회수 +1) -->
+<dialog class="exhibit-dialog" id="exhibitDialog">
+    <button type="button" class="dialog-close" id="dialogClose" aria-label="닫기">×</button>
+    <img class="dialog-image" id="dialogImage" alt="">
+    <div class="dialog-body">
+        <span class="dialog-type" id="dialogType"></span>
+        <h2 id="dialogTitle"></h2>
+        <p id="dialogDescription"></p>
+        <div class="dialog-meta" id="dialogMeta"></div>
+    </div>
+</dialog>
+
+</body>
+</html>
