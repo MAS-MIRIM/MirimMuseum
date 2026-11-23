@@ -3,6 +3,10 @@
     {
       "source": "/",
       "destination": "/html/mirim_museum.html"
+    },
+    {
+      "source": "/:page.html",
+      "destination": "/html/:page.html"
     }
   ]
 }
