@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/html/mirim_museum.html"
+    }
+  ]
+}
